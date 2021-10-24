@@ -2,26 +2,24 @@
 
     require APP.'/lib/render.php';
     require APP.'/lib/conn.php';
+    require APP.'/src/db/database.php';
 
-    $inUsr= filter_input(INPUT_POST, 'username',);
-    $inPasswd= filter_input(INPUT_POST, 'passwd',);
-    $inEmail= filter_input(INPUT_POST, 'email',);
+    $inUsr= filter_input(INPUT_POST, 'username');
+    $inPasswd= filter_input(INPUT_POST, 'passwd');
+    $inEmail= filter_input(INPUT_POST, 'email');
+    
 
 if ($inUsr != null and $inPasswd != null and $inEmail != null) {
 
+$gdb= getConnection($dsn, $dbuser, $dbpasswd);
 
-try{
-    
-    
-         $stmt= $gdb->prepare("INSERT INTO USERS(username,passwd,email) VALUES (?,?,?)");
-        $stmt->bindParam(1,$inUsr);
-        $stmt->bindParam(2,$inPasswd);
-        $stmt->bindParam(3,$inEmail);
-        $stmt->execute([$inUsr,$inPasswd,$inEmail]);
-    }catch(PDOException $e){
-        echo $e->getMessage();
-    }
+$data= [$inUsr,$inPasswd,$inEmail];
+$table= 'USERS';
 
+insert($gdb,$table,$data);
+
+setcookie('email',$inEmail,0,'/','localhost');
+setcookie('user',$inUsr,0,'/','localhost');
 
     header("Location: ?url=dashboard");
 

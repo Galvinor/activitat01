@@ -17,8 +17,9 @@ include 'header.tpl.php';
         
         <main>
             <form action="?url=login_action" method="post">
-                <input type="text" name="usename" placeholder="Nombre de usuario">
+                <input type="text" name="email" placeholder="e-mail">
                 <input type="password" name="passwd" placeholder="Password">
+                Quieres recordar tu usuario para la próxima vez?<input type="checkbox" name="remind">
                 <button type="submit">Login</button>
 
 

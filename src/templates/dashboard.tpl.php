@@ -1,5 +1,10 @@
 <?php
 include 'header.tpl.php';
 ?>
-
-<h1>bienvenido a tu Dashboard</h1>
+</aside>
+<br>
+<section class='dashboard'>
+<h2 id='welcome' >Bienvenido, recluta <?php $email=filter_input(INPUT_COOKIE,'email')  ?>!</h2>
+</section>
+    </body>
+</html>

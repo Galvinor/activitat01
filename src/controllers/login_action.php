@@ -2,19 +2,26 @@
 
     require APP.'/lib/render.php';
     require APP.'/lib/conn.php';
+    require APP.'/src/db/database.php';
 
-    $inUsr= filter_input(INPUT_POST, 'username',);
-    $inPasswd= filter_input(INPUT_POST, 'passwd',);
+    $inEmail= filter_input(INPUT_POST, 'email');
+    $inPasswd= filter_input(INPUT_POST, 'passwd');
+    $remindCheck= filter_input(INPUT_POST, 'remind');
 
-if ($inUsr != null and $inPasswd != null) {
+    if ($inEmail != null and $inPasswd != null) {
 
-    setcookie('username',$inUsr,0,'/','localhost');
-    setcookie('passwd',$inPasswd,0,'/','localhost');
+    $gdb= getConnection($dsn, $dbuser, $dbpasswd);
+
+    
+    auth($gdb,$inEmail,$inPasswd);
+
+    if ($remindCheck==true){
+    setcookie('email',$inEmail,0,'/','localhost');
+    }
 
     header("Location: ?url=dashboard");
 
-} else {
+    } else {
 
-    header("Location: ?url=badlogin");
-}
-
+        header("Location: ?url=badlogin");
+    }
