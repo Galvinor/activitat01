@@ -1,5 +1,6 @@
 <?php
 include 'header.tpl.php';
+$email=filter_input(INPUT_COOKIE,'email');
 ?>
 
 
@@ -17,9 +18,9 @@ include 'header.tpl.php';
         
         <main>
             <form action="?url=login_action" method="post">
-                <input type="text" name="email" placeholder="e-mail">
+                <input type="text" name="email" placeholder="e-mail" default=<?echo $email?> >
                 <input type="password" name="passwd" placeholder="Password">
-                Quieres recordar tu usuario para la próxima vez?<input type="checkbox" name="remind">
+                Quieres recordar tu usuario para la próxima vez? <input type="checkbox" name="remind">
                 <button type="submit">Login</button>
 
 
