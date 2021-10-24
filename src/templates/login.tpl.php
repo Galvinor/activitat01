@@ -18,7 +18,7 @@ $email=filter_input(INPUT_COOKIE,'email');
         
         <main>
             <form action="?url=login_action" method="post">
-                <input type="text" name="email" placeholder="e-mail" default=<?echo $email?> >
+                <input type="text" name="email" placeholder="e-mail" value=<?php echo $email?>>
                 <input type="password" name="passwd" placeholder="Password">
                 Quieres recordar tu usuario para la próxima vez? <input type="checkbox" name="remind">
                 <button type="submit">Login</button>
