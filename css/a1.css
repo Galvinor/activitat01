@@ -10,6 +10,13 @@ header{
     justify-content: center;
 }
 
+.breadcrumb {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #cce0f1;
+}
+
 img.logo {
     width: 100px;
     height: 100px;

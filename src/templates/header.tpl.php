@@ -9,9 +9,9 @@
     <body>
 
         <header>
-            <img class="logo" src="/activitat01/img/empire.png"> 
+            <img class="logo" src="/img/empire.png"> 
             <h1>Welcome to the Imperial Academy of Carida</h1>
-            <img class="logo" src="/activitat01/img/empire.png">
+            <img class="logo" src="/img/empire.png">
             <!-- <h1><?= $usr; ?></h1> -->
         </header>
         <aside>

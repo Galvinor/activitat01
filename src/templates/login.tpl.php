@@ -13,6 +13,9 @@ $passwd=filter_input(INPUT_COOKIE,'passwd');
 
         </aside>
 
+        <div class="breadcrumb">
+            <div><a href="?url=home">Home</a></div>/<div><a href="?url=login">Log In</a></div>
+        </div>
         
         <h2>Welcome, visitor! Log in to view your academy record!</h2>
         

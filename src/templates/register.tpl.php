@@ -10,6 +10,10 @@ include 'header.tpl.php';
             </ul>
 
         </aside>
+
+        <div class="breadcrumb">
+            <div><a href="?url=home">Home</a></div>/<div><a href="?url=register">Register</a></div>
+        </div>
         
         <h2>Welcome, visitor! You're only one step afar from becoming an imperial cadet</h2>
         

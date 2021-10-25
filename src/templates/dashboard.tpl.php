@@ -13,6 +13,10 @@ include 'header.tpl.php';
             </ul>
 
         </aside>
+
+        <div class="breadcrumb">
+            <div><a href="?url=home">Home</a></div>/<div><a href="?url=home">Dashboard</a></div>
+        </div>
         <br>
         <section class='dashboard'>
             <h2 id='welcome' >Welcome, recruit<?= $_SESSION['username'];  ?>!</h2>
