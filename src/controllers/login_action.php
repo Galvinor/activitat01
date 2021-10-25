@@ -13,13 +13,18 @@
     $gdb= getConnection($dsn, $dbuser, $dbpasswd);
 
     
-    auth($gdb,$inEmail,$inPasswd);
+    $auth= auth($gdb,$inEmail,$inPasswd);
 
     if ($remindCheck==true){
     setcookie('email',$inEmail,0,'/','localhost');
+    setcookie('passwd',$inPasswd,0,'/','localhost');
     }
 
-    header("Location: ?url=dashboard");
+    if ($auth==true){
+        header("Location: ?url=dashboard");
+    }else {
+        header("Location: ?url=badlogin");
+    }
 
     } else {
 

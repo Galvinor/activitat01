@@ -13,10 +13,9 @@ if ($inUsr != null and $inPasswd != null and $inEmail != null) {
 
 $gdb= getConnection($dsn, $dbuser, $dbpasswd);
 
-$data= [$inUsr,$inPasswd,$inEmail];
 $table= 'USERS';
 
-insert($gdb,$table,$data);
+insert($gdb,$table,$inUsr,$inPasswd,$inEmail);
 
 setcookie('email',$inEmail,0,'/','localhost');
 setcookie('user',$inUsr,0,'/','localhost');

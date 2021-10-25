@@ -12,7 +12,7 @@ function auth($db,$email,$pass):bool
             
             if($count==1){       
                 $user=$row[0];
-                $res=password_verify($pass,$user['passw']);
+                $res=password_verify($pass,$user['passwd']);
                
                 if ($res){
                 $_SESSION['uname']=$user['uname'];
@@ -30,27 +30,15 @@ function auth($db,$email,$pass):bool
         }
     }
 
-    function insert($db,$table,$data):bool 
+    function insert($db,$table,$usr,$pass,$email):bool 
     {
-       if (is_array($data)){
-          $columns='';$bindv='';$values=null;
-            foreach ($data as $column => $value) {
-                $columns.='`'.$column.'`,';
-                $bindv.='?,';
-                $values[]=$value;
-            }
-            $columns=substr($columns,0,-1);
-            $bindv=substr($bindv,0,-1);
-              
-            $sql="INSERT INTO {$table}({$columns}) VALUES ({$bindv})";
+       if ($usr!=null and $pass !=null and $email != null){
+        $stmt= $db->prepare("INSERT INTO $table(userame,passwd,email) VALUES (?,?,?)");
+            $stmt->bindParam(1,$usr);
+            $stmt->bindParam(2,password_hash($pass,PASSWORD_BCRYPT));
+            $stmt->bindParam(3,$email);
+            $stmt->execute([$usr,password_hash($pass,PASSWORD_BCRYPT),$email]);
             
-                try{
-                    $stmt=$db->prepare($sql);
-                    $stmt->execute($values);
-                }catch(PDOException $e){
-                    echo $e->getMessage();
-                    return false;
-                }
             
             return true;
             }
