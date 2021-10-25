@@ -12,15 +12,15 @@
 
     $gdb= getConnection($dsn, $dbuser, $dbpasswd);
 
-    
     $auth= auth($gdb,$inEmail,$inPasswd);
 
-    if ($remindCheck==true){
-    setcookie('email',$inEmail,0,'/','localhost');
-    setcookie('passwd',$inPasswd,0,'/','localhost');
-    }
-
+    
     if ($auth==true){
+        if ($remindCheck==true){
+            setcookie('email',$inEmail,0,'/','localhost');
+            setcookie('passwd',$inPasswd,0,'/','localhost');
+            }
+
         header("Location: ?url=dashboard");
     }else {
         header("Location: ?url=badlogin");

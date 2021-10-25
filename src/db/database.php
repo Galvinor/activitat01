@@ -15,7 +15,7 @@ function auth($db,$email,$pass):bool
                 $res=password_verify($pass,$user['passwd']);
                
                 if ($res){
-                $_SESSION['uname']=$user['uname'];
+                $_SESSION['username']=$user['username'];
                 $_SESSION['email']=$user['email'];
            
                     return true;

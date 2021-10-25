@@ -11,7 +11,7 @@ include 'header.tpl.php';
 
         </aside>
         
-        <h1>Bienvenidos al Registro</h1>
+        <h1>Welcome, visitor! You're only one step afar from becoming an imperial cadet</h1>
         
         <main>
             <form action="?url=register_action" method="post">

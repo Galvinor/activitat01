@@ -1,8 +1,16 @@
 <?php
 include 'header.tpl.php';
 ?>
-</aside>
-<h1>INCORRECT DATA</h1>
 
+            <ul>
+                <li>
+                    <a href="?url=home">Home</a>
+                </li>
+            </ul>
+        </aside>
+        
+        <section class="badlogin">
+            <h1>INCORRECT DATA</h1>
+        </section>
     </body>
 </html>

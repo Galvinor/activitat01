@@ -17,8 +17,6 @@ $table= 'USERS';
 
 insert($gdb,$table,$inUsr,$inPasswd,$inEmail);
 
-setcookie('email',$inEmail,0,'/','localhost');
-setcookie('user',$inUsr,0,'/','localhost');
 
     header("Location: ?url=dashboard");
 

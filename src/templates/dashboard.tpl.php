@@ -1,10 +1,16 @@
 <?php
 include 'header.tpl.php';
 ?>
-</aside>
-<br>
-<section class='dashboard'>
-<h2 id='welcome' >Welcome, recruit<?php echo $_SESSION['uname']  ?>!</h2>
-</section>
+            <ul>
+                <li>
+                    <a href="?url=home">Home</a>
+                </li>
+            </ul>
+
+        </aside>
+        <br>
+        <section class='dashboard'>
+            <h2 id='welcome' >Welcome, recruit<?= $_SESSION['username'];  ?>!</h2>
+        </section>
     </body>
 </html>
