@@ -14,15 +14,17 @@ $passwd=filter_input(INPUT_COOKIE,'passwd');
         </aside>
 
         
-        <h1>Welcome, visitor! Log in to view your academy record!</h1>
+        <h2>Welcome, visitor! Log in to view your academy record!</h2>
         
         
         <main>
             <form action="?url=login_action" method="post">
                 <input type="text" name="email" placeholder="e-mail" value=<?php echo $email?>>
                 <input type="password" name="passwd" placeholder="Password" value=<?php echo $passwd?>>
-                Quieres recordar tu usuario para la próxima vez? <input type="checkbox" name="remind">
                 <button type="submit">Login</button>
+                <br/>
+                Do you want the Empire to remind you your credentials? <input type="checkbox" name="remind">
+                
 
 
             </form>

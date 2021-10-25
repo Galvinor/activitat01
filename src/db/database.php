@@ -5,7 +5,7 @@ function auth($db,$email,$pass):bool
         
         try{   
             
-            $stmt=$db->prepare('SELECT * FROM users WHERE email=:email LIMIT 1');
+            $stmt=$db->prepare('SELECT * FROM USERS WHERE email=:email LIMIT 1');
             $stmt->execute([':email'=>$email]);
             $count=$stmt->rowCount();
             $row=$stmt->fetchAll(PDO::FETCH_ASSOC);  

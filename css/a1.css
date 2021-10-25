@@ -50,8 +50,20 @@ section.home {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 100px;
+}
+
+section.home div.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 40px;
+    margin: 10px;
+}
+
+section.home img {
+    width: 450px;
 }
 
 section.dashboard {
