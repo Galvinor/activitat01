@@ -20,6 +20,8 @@ function getRoute():string{
             return 'dashboard';
         case 'badlogin':
             return 'badlogin';
+        case 'logout':
+            return 'logout';
         default:
             return 'home';
     }

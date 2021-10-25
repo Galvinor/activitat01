@@ -6,6 +6,11 @@ include 'header.tpl.php';
                     <a href="?url=home">Home</a>
                 </li>
             </ul>
+            <ul>
+                <li>
+                    <a href="?url=logout">Log out</a>
+                </li>
+            </ul>
 
         </aside>
         <br>
